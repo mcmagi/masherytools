@@ -175,7 +175,7 @@ router.post('/', function (req, res) {
             };
 
 
-            apiClient.methods.fetchAllServices(svcArgs, function (serviceList, serviceRawResponse) {
+            /*apiClient.methods.fetchAllServices(svcArgs, function (serviceList, serviceRawResponse) {
                 log.debug(serviceList);
 
                 if (serviceList.length === 0 && !printOnly) {
@@ -219,7 +219,8 @@ router.post('/', function (req, res) {
                         processSwagger20(swaggerDoc, apiId, apiName, basePath);
                     }, 2000);
                 }
-            });
+            }); */
+            processSwagger20(swaggerDoc, 0, apiName, basePath);
         } else {
             res.render('swagger2iodocs', {
                 title:       'Swagger2IODocs',
